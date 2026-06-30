@@ -1,0 +1,240 @@
+/* =========================================
+   RESET & BASE
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #1f2937;
+  padding: 1rem;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+.app-header {
+  text-align: center;
+  color: #ffffff;
+  margin: 1.5rem 0 1rem;
+}
+
+.app-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.app-header .subtitle {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 0.25rem;
+}
+
+/* =========================================
+   LAYOUT CONTAINER (centered)
+   ========================================= */
+.app-container {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* =========================================
+   SEARCH BAR
+   ========================================= */
+.search-bar {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+}
+
+#cityInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#searchBtn {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #1f2937;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#searchBtn:hover {
+  background-color: #374151;
+}
+
+#searchBtn:active {
+  transform: scale(0.97);
+}
+
+/* =========================================
+   LOADING MESSAGE
+   ========================================= */
+.loading-msg {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+/* =========================================
+   ERROR ALERT
+   ========================================= */
+.error-alert {
+  width: 100%;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* =========================================
+   WEATHER CARD
+   ========================================= */
+.weather-card {
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.weather-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#cityName {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+#weatherDescription {
+  font-size: 0.9rem;
+  color: #6b7280;
+  text-transform: capitalize;
+}
+
+#weatherIcon {
+  width: 64px;
+  height: 64px;
+}
+
+.temp-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+#temperature {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+#unitToggleBtn {
+  border: 1px solid #d1d5db;
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#unitToggleBtn:hover {
+  background-color: #e5e7eb;
+}
+
+.weather-details {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.detail-label {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.detail-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+/* =========================================
+   UTILITY
+   ========================================= */
+.hidden {
+  display: none !important;
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+   ========================================= */
+@media (min-width: 600px) {
+  .app-container {
+    max-width: 480px;
+  }
+
+  .app-header h1 {
+    font-size: 2.1rem;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — DESKTOP
+   ========================================= */
+@media (min-width: 1024px) {
+  .app-container {
+    max-width: 520px;
+  }
+
+  .weather-card {
+    padding: 2rem;
+  }
+
+  #temperature {
+    font-size: 3rem;
+  }
+}

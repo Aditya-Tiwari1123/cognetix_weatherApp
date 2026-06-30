@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="app-header">
+    <h1>Weather App</h1>
+    <p class="subtitle">Search any city for real-time weather</p>
+  </header>
+
+  <main class="app-container">
+
+    <!-- ===== Search Bar ===== -->
+    <section class="search-bar">
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="Enter city name..."
+        autocomplete="off"
+      />
+      <button id="searchBtn" type="button">Search</button>
+    </section>
+
+    <!-- ===== Loading Indicator ===== -->
+    <p id="loadingMsg" class="loading-msg hidden">Loading weather data...</p>
+
+    <!-- ===== Error Message Container ===== -->
+    <div id="errorAlert" class="error-alert hidden">
+      <span id="errorText"></span>
+    </div>
+
+    <!-- ===== Weather Info Container ===== -->
+    <section id="weatherCard" class="weather-card hidden">
+
+      <div class="weather-top">
+        <div>
+          <h2 id="cityName">--</h2>
+          <p id="weatherDescription">--</p>
+        </div>
+        <img id="weatherIcon" src="" alt="weather icon" />
+      </div>
+
+      <div class="temp-row">
+        <span id="temperature">--</span>
+        <button id="unitToggleBtn" type="button" data-unit="C">
+          °C / °F
+        </button>
+      </div>
+
+      <div class="weather-details">
+        <div class="detail-item">
+          <span class="detail-label">Humidity</span>
+          <span id="humidity" class="detail-value">--</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Wind Speed</span>
+          <span id="windSpeed" class="detail-value">--</span>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
